@@ -45,7 +45,7 @@ class Matrix(object):
         #ваш код вместо строчки ниже
         raise NotImplementedError
 
-    def transpose(self, other):
+    def transpose(self):
         """Вернёт транспонированную матрицу"""
         #ваш код вместо строчки ниже
         raise NotImplementedError
