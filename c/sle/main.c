@@ -24,40 +24,25 @@ struct Matrix* constructMatrix (unsigned int m, unsigned int n) {
   return mat;
 }
 
-// Домножение матрицы на скаляр, создаётся новая матрица
-struct Matrix* scaleMatrix (struct Matrix* mat, double scalar) {
-  struct Matrix* result = constructMatrix(mat->m, mat->n);
-  /* TODO: Заполнить result->array */
-  return result;
+//Поменять местами строки i и j
+void permuteInPlace(struct Matrix* mat, unsigned int i, unsigned int j) {
+  /*TODO: Добавить проверки для i и j*/
+  double * temp;
+  temp = mat->array[i];
+  mat->array[i] = mat->array[j];
+  mat->array[j] = temp;
 }
 
-// Домножение матрицы на скаляр с её изменением
-void scaleMatrixInplace (struct Matrix* mat, double scalar) {
-  /* TODO: Изменить матрицу по указателю mat */
-  return;
+//Прибавить к строке dst строку src, домноженную на scalar
+void addInPlace(struct Matrix* mat, unsigned int src, unsigned int dst, double scalar) {
+  /*TODO: Добавить проверки для src, dst и scalar*/
+  /*TODO: Реализовать прибавление*/
 }
 
-//Транспонирование матрицы
-struct Matrix* transpose (struct Matrix* mat) {
-  struct Matrix* result = constructMatrix(mat->n, mat->m);
-  /* TODO: Заполнить result->array */
-  return result;
-}
-
-// Сумма двух матриц
-struct Matrix* sum (struct Matrix* l, struct Matrix* r) {
-  /* TODO: Добавить проверку возможности суммы. Вернуть NULL, если сложить матрицы нельзя */
-  struct Matrix* result = constructMatrix(l->m, l->n);
-  /* TODO: Заполнить result->array */
-  return result;
-}
-
-// Произведение двух матриц
-struct Matrix* multiply (struct Matrix* l, struct Matrix* r) {
-  /* TODO: Добавить проверку возможности произведения. Вернуть NULL, если перемножить матрицы нельзя */
-  struct Matrix* result = constructMatrix(l->m, r->n);
-  /* TODO: Заполнить result->array */
-  return result;
+//Домножить строку i на scalar
+void scaleInPlace(struct Matrix* mat, unsigned int i, double scalar) {
+  /*TODO: Добавить проверки для i и scalar*/
+  /*TODO: Реализовать домножение*/
 }
 
 //Удалить матрицу, освободить память
@@ -171,6 +156,9 @@ void printMatrix(const struct Matrix* mat) {
 
 int main() {
   struct Matrix* mat = readMatrixFromFile("./input.txt");
+  printMatrix(mat);
+  printf("\n");
+  permuteInPlace(mat,0,1);
   printMatrix(mat);
   deleteMatrix(mat);
     /*TODO: Написать демонстрацию работы всех функций*/
