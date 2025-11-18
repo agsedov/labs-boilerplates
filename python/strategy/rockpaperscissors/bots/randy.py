@@ -4,7 +4,7 @@ import random
 class Randy(Bot):
     """Random bot for rock paper scissors"""
 
-    def make_move(self, game_state, player_state):
+    def make_move(self, player_state):
         return random.choice(["rock","paper","scissors"])
 
     def get_bot_info(self):

@@ -4,7 +4,7 @@ import random
 class Rock(Bot):
     """Bot for rock paper scissors"""
 
-    def make_move(self, game_state, player_state):
+    def make_move(self, player_state):
         return "rock"
 
     def get_bot_info(self):

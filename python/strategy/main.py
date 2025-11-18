@@ -60,7 +60,7 @@ def play_match(game, bots):
         bot = bots[current_player]
         player_state = game.get_player_state(current_player)
 
-        move = bot.make_move(game.state, player_state)
+        move = bot.make_move(player_state)
 
         if total_moves > 100:
             break

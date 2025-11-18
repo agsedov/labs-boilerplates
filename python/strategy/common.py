@@ -92,11 +92,6 @@ class Game(ABC):
         pass
 
     @abstractmethod
-    def get_available_moves(self, player_id: int) -> List[str]:
-        """Get list of available moves for a player"""
-        pass
-
-    @abstractmethod
     def check_game_over(self) -> bool:
         """Check if the game has ended"""
         pass
